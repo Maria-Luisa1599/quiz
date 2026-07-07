@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', monospace;
+  color: #FFF;
+  background: #0f0f1b;
+  width: 95vw;
+  transition: 1
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.18) 0px,
+      rgba(0,0,0,0.18) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+}
+
+.container-app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  border-left: 4px solid #2d1b4e;
+  border-right: 4px solid #2d1b4e;
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(45,27,78,0.35) 0px,
+      rgba(45,27,78,0.35) 2px,
+      transparent 2px,
+      transparent 50px
+    );
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 25px;
+}
+
+.container img{
+  width: 100px;
+  margin-bottom: 10px;
+  animation: pcVoando 2.4s ease-in-out infinite;
+}
+
+@keyframes pcVoando {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  user-select: none;
+}
+
+.title p{
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.title > span{
+  display: block;
+  font-size: 10px;
+  width: 350px;
+}
+
+.title #pinkTitle{
+  color: #B5277D;
+}
+.title #blueTitle{
+  color: #2EE6D6;
+}
+
+.botaoPlay{
+  padding: 18px 20px;
+  font-size: 13px;
+  background-color: #FFD93D;
+  font-family: 'Press Start 2P', monospace;
+  border: 4px solid white;
+  box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.75);
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.container > span{
+  font-size: 8px;
+  margin-top: 20px;
+  color: #2ee6d6;
+  font-weight: 100;
+  animation: piscaTxt 1.1s steps(2) infinite;
+}
+
+@keyframes piscaTxt {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.quiz p{
+  width: 620px;
+  margin-top: 15px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.quiz .perguntas{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;  
+}
+
+.quiz .pergunta{
+  display: flex;
+  align-items: center;
+  border: 3px solid white;
+  padding: 10px;
+  gap: 15px;  
+  text-align: left;
+  font-size: 9px;
+  background-color: #1a1a2e;
+  cursor: pointer;
+}
+
+.quiz > .perguntas{
+  margin-top: 15px;
+  width: 100%;
+}
+
+.quiz .pergunta:hover {
+  border: 3px solid #2ee6d6;
+  background-color: #232342;
+}
+
+.quiz .pergunta span{
+  background-color: #FF2684;
+  padding: 10px;
+  border: 2px solid white;
+
+}
+
+.quiz > span{
+  width: 100%;
+  text-align: left;
+  color: #F8D33B;
+  animation: none;
+}
+
+.quiz .progressBar{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 10px;
+}
+
+.quiz .progress{
+  border: 2px solid white;
+  width: 100%;
+}
+
+.quiz .filled{
+  background-color: #2ee6d6;
+}
